@@ -1,0 +1,23 @@
+{
+  "name": "@agiliza/config-tailwind",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme": "./src/theme.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@agiliza/eslint-config": "*",
+    "@agiliza/typescript-config": "*",
+    "@types/node": "26.3.0",
+    "typescript": "7.0.2"
+  }
+}
