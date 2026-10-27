@@ -85,7 +85,7 @@ export function Footer({ currentTool }: FooterProps) {
               className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-slate-900 transition-colors hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
               aria-label="Agiliza Tools, página inicial"
             >
-              <svg viewBox="0 0 32 32" className="h-7 w-7 shrink-0" aria-hidden="true">
+              <svg viewBox="0 0 32 32" className="h-6 w-6 shrink-0" aria-hidden="true">
                 <rect x="1" y="1" width="30" height="30" rx="8" fill="#2563EB" />
                 <path d="M8 24 16 7l8 17" fill="none" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M11.5 18h9" fill="none" stroke="#67E8F9" strokeWidth="3" strokeLinecap="round" />
