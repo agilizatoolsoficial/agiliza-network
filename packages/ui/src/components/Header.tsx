@@ -9,10 +9,9 @@ import { Icon } from '../icon'
 export interface HeaderProps {
   currentTool?: ToolId
   homeHref?: string
-  logoIconSrc?: string
 }
 
-export function Header({ currentTool, homeHref = 'https://agilizatools.com.br', logoIconSrc }: HeaderProps) {
+export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [touchActive, setTouchActive] = useState(false)
@@ -58,24 +57,22 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br', 
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md transition-colors"
+      className="sticky top-4 z-50 mx-4 mt-4 w-auto max-w-7xl rounded-xl border border-slate-800/80 bg-slate-950/85 shadow-sm shadow-slate-900/10 backdrop-blur-md transition-colors sm:mx-auto"
       role="banner"
     >
-      <div className="flex h-16 w-full max-w-7xl mx-auto items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="flex h-16 w-full items-center justify-between px-4 sm:px-6">
         {/* Brand Logo */}
         <a
           href={homeHref}
           className="flex items-center gap-2.5 group text-base sm:text-lg font-extrabold text-white transition-opacity hover:opacity-90"
           aria-label="Agiliza Tools — Página inicial"
         >
-          <span
-            className={`flex h-9 w-9 shrink-0 items-center justify-center ${
-              logoIconSrc ? 'bg-contain bg-center bg-no-repeat' : 'rounded-full bg-blue-600 text-white shadow-sm'
-            }`}
-            style={logoIconSrc ? { backgroundImage: `url(${logoIconSrc})` } : undefined}
-            aria-hidden="true"
-          >
-            {!logoIconSrc && <Icon name="bolt" className="h-5 w-5" />}
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden="true">
+            <svg viewBox="0 0 32 32" className="h-full w-full">
+              <rect x="1" y="1" width="30" height="30" rx="8" fill="#2563EB" />
+              <path d="M8 24 16 7l8 17" fill="none" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11.5 18h9" fill="none" stroke="#67E8F9" strokeWidth="3" strokeLinecap="round" />
+            </svg>
           </span>
           <span className="text-white">
             Agiliza Tools
