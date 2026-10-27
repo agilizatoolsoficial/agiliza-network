@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="light" data-theme="light">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <Header homeHref="/" />
+        <Header homeHref="/" logoIconSrc="/icon.svg" />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

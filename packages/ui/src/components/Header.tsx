@@ -9,14 +9,16 @@ import { Icon } from '../icon'
 export interface HeaderProps {
   currentTool?: ToolId
   homeHref?: string
+  logoIconSrc?: string
 }
 
-export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }: HeaderProps) {
+export function Header({ currentTool, homeHref = 'https://agilizatools.com.br', logoIconSrc }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [touchActive, setTouchActive] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const touchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const showToolsMenu = currentTool !== undefined || homeHref !== '/'
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -66,8 +68,14 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
           className="flex items-center gap-2.5 group text-base sm:text-lg font-extrabold text-white transition-opacity hover:opacity-90"
           aria-label="Agiliza Tools — Página inicial"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm" aria-hidden="true">
-            <Icon name="bolt" className="h-5 w-5" />
+          <span
+            className={`flex h-9 w-9 shrink-0 items-center justify-center ${
+              logoIconSrc ? 'bg-contain bg-center bg-no-repeat' : 'rounded-full bg-blue-600 text-white shadow-sm'
+            }`}
+            style={logoIconSrc ? { backgroundImage: `url(${logoIconSrc})` } : undefined}
+            aria-hidden="true"
+          >
+            {!logoIconSrc && <Icon name="bolt" className="h-5 w-5" />}
           </span>
           <span className="text-white">
             Agiliza Tools
@@ -75,7 +83,7 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 md:flex" aria-label="Navegação principal">
+        {showToolsMenu && <nav className="hidden items-center gap-2 md:flex" aria-label="Navegação principal">
           <div className="relative" ref={dropdownRef}>
             <button
               id="tools-menu-button"
@@ -90,7 +98,7 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
                   : 'text-slate-300 hover:bg-slate-900 hover:text-white'
               }`}
             >
-              <span>Ferramentas ({TOOLS.length})</span>
+              <span>Ferramentas</span>
               <svg
                 className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
                   dropdownOpen ? 'rotate-180 text-blue-400' : ''
@@ -148,29 +156,29 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
               </div>
             )}
           </div>
-        </nav>
+        </nav>}
 
-        <div className="flex items-center gap-3">
-            <ThemeToggle />
-            {/* Mobile Hamburger Toggle */}
-            <button
-              type="button"
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden touch-action:manipulation"
-              onClick={() => setMenuOpen((o) => !o)}
-              aria-expanded={menuOpen}
-              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-            >
-              {menuOpen ? (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
+        <div className="flex items-center gap-4 sm:gap-5">
+          <ThemeToggle />
+          {/* Mobile Hamburger Toggle */}
+          <button
+            type="button"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden touch-action:manipulation"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          >
+            {menuOpen ? (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Content */}
