@@ -137,7 +137,7 @@ export default function Home() {
                 className="group relative h-full"
               >
                 <Card variant="default" padding="sm" hoverable className="flex h-full flex-col">
-                  <div>
+                  <div className="flex-1">
                     <div className="mb-3 flex items-center justify-between">
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/15 bg-blue-500/10 text-blue-300">
                         <Icon name={tool.icon} className="h-5 w-5" />
