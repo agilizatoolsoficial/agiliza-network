@@ -129,21 +129,25 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredTools.map((tool) => (
               <a
                 key={tool.id}
                 href={tool.href}
-                className="group relative h-full"
+                className="group relative h-full w-full max-w-[360px]"
               >
-                <Card variant="default" padding="none" hoverable className="tool-card flex h-full flex-col rounded-xl border-2 p-2.5">
+                <Card variant="default" padding="none" hoverable className="tool-card flex h-full flex-col rounded-xl border p-2.5">
                   <div className="flex-1">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="flex h-8 w-8 items-center justify-center rounded-md border border-blue-100 bg-blue-50 text-blue-800 dark:border-blue-800/70 dark:bg-blue-950/60 dark:text-blue-300">
                         <Icon name={tool.icon} className="h-4 w-4" />
                       </span>
                       {tool.badge && (
-                        <span className="rounded-md bg-[#314f7b] px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-white">
+                        <span className={`rounded-md border px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wide ${
+                          tool.badge.toLowerCase() === 'popular'
+                            ? 'border-blue-200 bg-blue-50 text-blue-800 dark:border-blue-800/70 dark:bg-blue-950/60 dark:text-blue-300'
+                            : 'border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-800/70 dark:bg-emerald-950/50 dark:text-emerald-300'
+                        }`}>
                           {tool.badge}
                         </span>
                       )}

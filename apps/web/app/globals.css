@@ -110,7 +110,7 @@ html.light [class~="hover:text-slate-200"]:hover {
 
 html.light .tool-card {
   background-color: #FFFFFF !important;
-  border-color: #304D76 !important;
+  border-color: #D1DAE5 !important;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.14);
 }
 
