@@ -134,7 +134,7 @@ export default function Home() {
               <a
                 key={tool.id}
                 href={tool.href}
-                className="group relative h-full w-full max-w-[360px]"
+                className="group relative h-full w-full max-w-[380px]"
               >
                 <Card variant="default" padding="none" hoverable className="tool-card flex h-full flex-col rounded-xl border p-2.5">
                   <div className="flex-1">
