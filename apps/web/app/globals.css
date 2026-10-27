@@ -93,7 +93,7 @@ html.light [class~="border-slate-800/80"],
 html.light [class~="border-slate-800/60"],
 html.light [class~="border-slate-700"],
 html.light [class~="border-slate-700/80"] {
-  border-color: #CBD5E1 !important;
+  border-color: #E2E8F0 !important;
 }
 
 html.light [class~="hover:bg-slate-900"]:hover,

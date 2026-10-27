@@ -26,7 +26,7 @@ const paddings = {
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ variant = 'default', padding = 'md', hoverable = false, children, className = '', ...rest }, ref) => {
     const hoverClasses = hoverable
-      ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10'
+      ? 'transition-all duration-200 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-md hover:shadow-slate-900/10'
       : ''
 
     return (

@@ -136,22 +136,22 @@ export default function Home() {
                 href={tool.href}
                 className="group relative h-full"
               >
-                <Card variant="default" padding="md" hoverable className="flex h-full min-h-[200px] flex-col justify-between">
+                <Card variant="default" padding="sm" hoverable className="flex h-full flex-col">
                   <div>
                     <div className="mb-3 flex items-center justify-between">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/80 text-blue-300">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/15 bg-blue-500/10 text-blue-300">
                         <Icon name={tool.icon} className="h-5 w-5" />
                       </span>
                       {tool.badge && (
-                        <span className="rounded-md border border-blue-500/20 bg-blue-500/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-blue-300">
+                        <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-blue-300">
                           {tool.badge}
                         </span>
                       )}
                     </div>
-                    <h2 className="flex items-center gap-1.5 text-base font-bold text-white transition-colors group-hover:text-blue-300">
+                    <h2 className="flex items-center gap-1.5 text-base font-semibold text-white transition-colors group-hover:text-blue-300">
                       {tool.name}
                       <svg
-                        className="h-4 w-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-400"
+                        className="h-4 w-4 opacity-0 -translate-x-1 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 text-blue-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -160,14 +160,16 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </h2>
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">
                       {tool.description}
                     </p>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between border-t border-slate-800/60 pt-3 text-[11px] font-semibold text-blue-400 group-hover:text-blue-300">
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-blue-400 transition-colors group-hover:text-blue-300">
                     <span>Acessar ferramenta</span>
-                    <span aria-hidden="true">→</span>
+                    <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg>
                   </div>
                 </Card>
               </a>
