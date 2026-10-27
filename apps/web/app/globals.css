@@ -11,26 +11,101 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
-  background-color: #0F172A;
-  color: #F8FAFC;
+  background-color: #F8FAFC;
+  color: #0F172A;
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100dvh;
+}
+
+html.dark body {
+  background-color: #0F172A;
+  color: #F8FAFC;
+}
+
+html.light [class~="bg-slate-950"],
+html.light [class~="bg-slate-950/85"],
+html.light [class~="bg-slate-950/80"],
+html.light [class~="bg-slate-950/60"] {
+  background-color: #F8FAFC !important;
+}
+
+html.light [class~="bg-slate-900"],
+html.light [class~="bg-slate-900/90"],
+html.light [class~="bg-slate-900/85"],
+html.light [class~="bg-slate-900/80"],
+html.light [class~="bg-slate-900/60"],
+html.light [class~="bg-slate-900/50"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light [class~="bg-slate-800"],
+html.light [class~="bg-slate-800/80"],
+html.light [class~="bg-slate-800/60"] {
+  background-color: #EAF1F8 !important;
+}
+
+html.light [class~="bg-blue-950/80"] {
+  background-color: #EFF6FF !important;
+}
+
+html.light [class~="text-white"],
+html.light [class~="text-slate-100"] {
+  color: #0F172A !important;
+}
+
+html.light [class~="text-slate-200"],
+html.light [class~="text-slate-300"] {
+  color: #334155 !important;
+}
+
+html.light [class~="text-slate-400"] {
+  color: #475569 !important;
+}
+
+html.light [class~="text-slate-500"],
+html.light [class~="text-slate-600"] {
+  color: #64748B !important;
+}
+
+html.light [class~="text-blue-300"],
+html.light [class~="text-blue-400"] {
+  color: #1D4ED8 !important;
+}
+
+html.light [class~="bg-blue-600"][class~="text-white"] {
+  color: #FFFFFF !important;
+}
+
+html.light [class~="border-slate-800"],
+html.light [class~="border-slate-800/80"],
+html.light [class~="border-slate-800/60"],
+html.light [class~="border-slate-700"],
+html.light [class~="border-slate-700/80"] {
+  border-color: #CBD5E1 !important;
+}
+
+html.light [class~="hover:bg-slate-900"]:hover,
+html.light [class~="hover:bg-slate-800"]:hover,
+html.light [class~="hover:bg-slate-800/80"]:hover,
+html.light [class~="hover:bg-slate-700"]:hover {
+  background-color: #E2E8F0 !important;
+}
+
+html.light [class~="hover:text-white"]:hover,
+html.light [class~="hover:text-slate-200"]:hover {
+  color: #0F172A !important;
 }
 
 

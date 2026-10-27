@@ -27,9 +27,13 @@ export function useTheme() {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('agiliza-theme')
+    const root = document.documentElement
+    const layoutTheme = root.dataset.theme === 'dark' || root.classList.contains('dark')
+      ? 'dark'
+      : 'light'
     const initialTheme: Theme = storedTheme === 'light' || storedTheme === 'dark'
       ? storedTheme
-      : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+      : layoutTheme
 
     setThemeState(initialTheme)
     applyTheme(initialTheme)
