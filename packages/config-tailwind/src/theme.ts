@@ -1,0 +1,65 @@
+export const designTokens = {
+  colors: {
+    brand: {
+      primary: '#2563EB',
+      secondary: '#3B82F6',
+      accent: '#06B6D4',
+    },
+    neutral: {
+      bg: '#0F172A',
+      surface: '#1E293B',
+      border: '#334155',
+      textPrimary: '#F1F5F9',
+      textSecondary: '#94A3B8',
+    },
+    light: {
+      bg: '#FFFFFF',
+      surface: '#F8FAFC',
+      border: '#E2E8F0',
+      textPrimary: '#0F172A',
+      textSecondary: '#475569',
+    },
+    semantic: {
+      success: '#10B981',
+      warning: '#F59E0B',
+      error: '#EF4444',
+      info: '#2563EB',
+    },
+  },
+  spacing: {
+    1: '4px',
+    2: '8px',
+    3: '12px',
+    4: '16px',
+    5: '20px',
+    6: '24px',
+    8: '32px',
+    10: '40px',
+    12: '48px',
+    16: '64px',
+  },
+  borderRadius: {
+    sm: '6px',
+    md: '12px',
+    lg: '16px',
+    xl: '24px',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.1)',
+    xl: '0 20px 25px rgba(0, 0, 0, 0.15)',
+  },
+  fonts: {
+    sans: "'Inter', system-ui, -apple-system, sans-serif",
+    mono: "'JetBrains Mono', 'Fira Code', monospace",
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+  },
+  touchTargetMin: '44px',
+} as const

@@ -1,0 +1,11 @@
+# Next.js
+.next/
+out/
+.vercel/
+
+# Env
+.env*.local
+.env
+
+# Logs
+*.log
