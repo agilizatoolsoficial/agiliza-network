@@ -57,17 +57,17 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
 
   return (
     <header
-      className="sticky top-4 z-50 mx-4 mt-4 w-auto max-w-7xl rounded-xl border border-slate-800/80 bg-slate-950/85 shadow-sm shadow-slate-900/10 backdrop-blur-md transition-colors sm:mx-auto"
+      className="sticky top-3 z-50 mx-4 mt-3 w-auto max-w-7xl rounded-lg border border-slate-800/80 bg-slate-950/85 shadow-sm shadow-slate-900/10 backdrop-blur-md transition-colors sm:mx-auto"
       role="banner"
     >
-      <div className="flex h-16 w-full items-center justify-between px-4 sm:px-6">
+      <div className="flex h-14 w-full items-center justify-between px-3 sm:px-5">
         {/* Brand Logo */}
         <a
           href={homeHref}
-          className="flex items-center gap-2.5 group text-base sm:text-lg font-extrabold text-white transition-opacity hover:opacity-90"
+          className="group flex items-center gap-2 text-base font-extrabold text-white transition-opacity hover:opacity-90"
           aria-label="Agiliza Tools — Página inicial"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden="true">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center" aria-hidden="true">
             <svg viewBox="0 0 32 32" className="h-full w-full">
               <rect x="1" y="1" width="30" height="30" rx="8" fill="#2563EB" />
               <path d="M8 24 16 7l8 17" fill="none" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -160,7 +160,7 @@ export function Header({ currentTool, homeHref = 'https://agilizatools.com.br' }
           {/* Mobile Hamburger Toggle */}
           <button
             type="button"
-            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden touch-action:manipulation"
+              className="touch-action:manipulation flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white md:hidden"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
