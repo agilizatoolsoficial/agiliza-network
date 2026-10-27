@@ -129,18 +129,18 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredTools.map((tool) => (
               <a
                 key={tool.id}
                 href={tool.href}
                 className="group relative h-full"
               >
-                <Card variant="default" padding="sm" hoverable className="flex h-full flex-col">
+                <Card variant="default" padding="none" hoverable className="flex h-full flex-col rounded-xl p-3 shadow-sm shadow-slate-900/5 dark:shadow-black/20">
                   <div className="flex-1">
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/15 bg-blue-500/10 text-blue-300">
-                        <Icon name={tool.icon} className="h-5 w-5" />
+                    <div className="mb-2.5 flex items-center justify-between">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-blue-500/15 bg-blue-500/10 text-blue-300">
+                        <Icon name={tool.icon} className="h-[18px] w-[18px]" />
                       </span>
                       {tool.badge && (
                         <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide text-blue-300">
@@ -148,7 +148,7 @@ export default function Home() {
                         </span>
                       )}
                     </div>
-                    <h2 className="flex items-center gap-1.5 text-base font-semibold text-white transition-colors group-hover:text-blue-300">
+                    <h2 className="flex items-center gap-1.5 text-[15px] font-semibold text-white transition-colors group-hover:text-blue-300">
                       {tool.name}
                       <svg
                         className="h-4 w-4 opacity-0 -translate-x-1 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 text-blue-400"
@@ -160,12 +160,12 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </h2>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">
+                    <p className="mt-1 text-xs leading-relaxed text-slate-500">
                       {tool.description}
                     </p>
                   </div>
 
-                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-blue-400 transition-colors group-hover:text-blue-300">
+                  <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-blue-400 transition-colors group-hover:text-blue-300">
                     <span>Acessar ferramenta</span>
                     <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6 6 6-6 6" />
