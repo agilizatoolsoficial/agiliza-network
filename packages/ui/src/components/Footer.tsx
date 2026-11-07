@@ -5,6 +5,9 @@ import type { ToolId, ToolMeta } from '../types/tools'
 
 export interface FooterProps {
   currentTool?: ToolId
+  privacyHref?: string
+  termsHref?: string
+  contactHref?: string
 }
 
 const DOCUMENT_TOOL_IDS: ToolId[] = ['pdf', 'nota', 'sign']
@@ -69,7 +72,12 @@ const documents = TOOLS.filter((tool) => DOCUMENT_TOOL_IDS.includes(tool.id))
 const media = TOOLS.filter((tool) => MEDIA_TOOL_IDS.includes(tool.id))
 const productivity = TOOLS.filter((tool) => PRODUCTIVITY_TOOL_IDS.includes(tool.id))
 
-export function Footer({ currentTool }: FooterProps) {
+export function Footer({
+  currentTool,
+  privacyHref = 'https://agilizatools.com.br/privacidade',
+  termsHref = 'https://agilizatools.com.br/termos',
+  contactHref = 'https://agilizatools.com.br/contato',
+}: FooterProps) {
   const year = new Date().getFullYear()
 
   return (
@@ -110,19 +118,19 @@ export function Footer({ currentTool }: FooterProps) {
             <FooterSectionTitle>Institucional</FooterSectionTitle>
             <ul className="mt-3 space-y-1" role="list">
               <li>
-                <a href="https://agilizatools.com.br/privacidade" className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
+                <a href={privacyHref} className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
                   <Icon name="shield" className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                   Privacidade
                 </a>
               </li>
               <li>
-                <a href="https://agilizatools.com.br/termos" className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
+                <a href={termsHref} className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
                   <Icon name="file" className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                   Termos de uso
                 </a>
               </li>
               <li>
-                <a href="https://agilizatools.com.br/contato" className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
+                <a href={contactHref} className="flex items-center gap-2 py-1 text-sm text-slate-600 transition-colors hover:text-blue-700 dark:text-slate-400 dark:hover:text-blue-300">
                   <Icon name="message" className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                   Contato
                 </a>
